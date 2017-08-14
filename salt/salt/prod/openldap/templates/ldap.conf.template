@@ -6,6 +6,6 @@
 # This file should be world readable but not world writable.
 
 BASE    dc=ram,dc=nl
-URI     ldap://{{ pillar.get('ldap01') }} ldap://{{ pillar.get(' ldap02') }}
+URI     ldap://{{ pillar.get('ldap01') }} ldap://{{ pillar.get('ldap02') }}
 TLS_CACERT	/etc/ssl/certs/ca-certificates.crt
 

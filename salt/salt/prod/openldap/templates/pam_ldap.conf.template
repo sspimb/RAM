@@ -24,7 +24,7 @@
 base dc=ram,dc=nl
 
 # Another way to specify your LDAP server is to provide an
-uri ldap://{{ pillar.get('ldap01') }} {{ pillar.get('ldap02') }}
+uri ldap://{{ pillar.get('ldap01') }} ldap://{{ pillar.get('ldap02') }}
 # Unix Domain Sockets to connect to a local LDAP Server.
 #uri ldap://127.0.0.1/
 #uri ldaps://127.0.0.1/   

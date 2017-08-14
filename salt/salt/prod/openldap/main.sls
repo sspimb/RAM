@@ -17,12 +17,13 @@
 copy ldap.conf:
    file.managed:
      - name: /etc/ldap/ldap.conf
-     - source: salt://openldap/templates/ldap.conf
+     - source: salt://openldap/templates/ldap.conf.template
      - user: root
      - group: root
      - mode: 644
      - makedirs: true
      - backup: minion
+     - template: jinja
 
 # copy nsswitch.conf
 
@@ -62,6 +63,15 @@ copy the nsswitch conf:
      - mode: 644
      - backup: minion
 {% endfor %}
+
+# restart the nscd service if any pam files are updated
+
+restart nscd:
+    service.running:
+      - watch:
+        - file: /etc/pam.d/common*
+      - restart: True
+      - name: nscd
 
 #set the user perms from ldap 
 

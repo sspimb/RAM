@@ -131,4 +131,3 @@ iptables-conf:
     - run
     - name: /sbin/iptables-save > /etc/iptables/iptables-conf
     - onlyif: test -f /etc/iptables/iptables-conf
-

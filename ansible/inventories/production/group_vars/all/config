@@ -1,0 +1,5 @@
+#production ldap values
+---
+port: 389
+dnsport: 53
+httpport: 80

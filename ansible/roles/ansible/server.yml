@@ -1,4 +1,4 @@
 ---
-- hosts: prodsingle
+- hosts: prodall
   roles:
      - ansible

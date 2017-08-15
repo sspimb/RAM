@@ -64,7 +64,7 @@ copy the nsswitch conf:
      - backup: minion
 {% endfor %}
 
-# restart the nscd service if any pam files are updated
+# restart the nscd service if any pam files are updated...
 
 restart nscd:
     service.running:

@@ -7,3 +7,6 @@ base:
  'simon-min*':
    - ldapclients.prod
    - openldap.global
+ 'simon-tst*':
+   - ldapclients.prod
+   - openldap.global

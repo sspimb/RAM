@@ -5,3 +5,5 @@ prod:
   'simon-min*':
     - openldap.extras
     - openldap.main
+  'simon-tst*':
+    - openldap.main

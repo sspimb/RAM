@@ -1,4 +1,4 @@
 ---
-- hosts: prodall
+- hosts: all
   roles:
      - ansible

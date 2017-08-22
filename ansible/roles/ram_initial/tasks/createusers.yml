@@ -1,0 +1,13 @@
+# remove local user account and groups
+
+- name: create local accounts and groups
+  user:
+    name: "{{ item }}"
+    state: present
+    password: $6$4R8FS/2.1QoX$cnnvOlmSn3Iy83wfoHVQzNX2gkvr3SSLZYUEU8OBGP9rgqnGJc9npIIelc7S35gJdb43zPXnINQL7U0SFOshF0
+  with_items: "{{ userlist  }}"
+  ignore_errors: yes
+
+- name: set users password valid time
+  shell: chage -d0 "{{ item }}"
+  with_items: "{{ userlist  }}"

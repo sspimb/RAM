@@ -41,7 +41,7 @@
     path: /etc/sudoers
     state: present
     line: '{{ user }}	ALL=(ALL) ALL'
-#    validate: 'visudo -cf %s'
+    validate: 'visudo -cf %s'
 
 - name: Create ansible .ssh directory
   file:

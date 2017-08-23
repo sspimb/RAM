@@ -2,6 +2,18 @@
 - name: Include all default extension files in vars/all and all nested directories
   include_vars: 'main.yml'
 
+# add the pyhton package for ansilbel if not there already ..
+
+- name: Install libselinux-python
+  yum:
+    name: "{{ item }}"
+    state: present
+    state: latest
+    update_cache: yes
+  with_items:
+         - libselinux-python
+
+
 # add group
 - name: Add the ansible group
   group:

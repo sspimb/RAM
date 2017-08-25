@@ -86,9 +86,21 @@ copy iptables.conf:
      - backup: minion
      - template: jinja
 
+copy resolv.conf:
+   file.managed:
+     - name: /etc/resolv.conf
+     - source: salt://ram_initial/templates/resolv.conf.template
+     - user: root
+     - group: root
+     - mode: 644
+     - makedirs: true
+     - backup: minion
+     - template: jinja
+
+# copy the files 
 # copy the files 
 
-{% for file in ['resolv.conf', 'rkhunter.conf'] %}
+{% for file in ['rkhunter.conf'] %}
 {{ file }}:
   file.managed:
      - name: /etc/{{ file }}

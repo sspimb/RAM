@@ -7,5 +7,5 @@ prod:
     - openldap.main
   'simon-tst*':
     - openldap.main
-  't2*':
+  't*':
     - ram_initial.main

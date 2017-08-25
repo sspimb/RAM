@@ -10,3 +10,7 @@ base:
  'simon-tst*':
    - ldapclients.prod
    - openldap.global
+ 't2':
+   - ldapclients.prod
+   - ram_initial.prod
+   - openldap.global

@@ -4,14 +4,14 @@
 
 # add the pyhton package for ansilbel if not there already ..
 
-- name: Install libselinux-python
-  yum:
-    name: "{{ item }}"
-    state: present
-    state: latest
-    update_cache: yes
-  with_items:
-         - libselinux-python
+#- name: Install libselinux-python
+#  yum:
+#    name: "{{ item }}"
+#    state: present
+#    state: latest
+#    update_cache: yes
+#  with_items:
+#         - libselinux-python
 
 
 # add group
@@ -53,7 +53,7 @@
     path: /etc/sudoers
     state: present
     line: '{{ user }}	ALL=(ALL) ALL'
-    validate: 'visudo -cf %s'
+#    validate: 'visudo -cf %s'
 
 - name: Create ansible .ssh directory
   file:
